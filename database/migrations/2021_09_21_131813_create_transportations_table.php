@@ -16,9 +16,9 @@ class CreateTransportationsTable extends Migration
         Schema::create('transportations', function (Blueprint $table) {
             $table->id();
 
-            $table->integer('from');
-            $table->integer('to');
-            $table->string('mass');
+            $table->decimal('latitude');
+            $table->decimal('longitude');
+            $table->integer('mass');
 
             $table->timestamps();
         });

@@ -9,9 +9,5 @@ class Transportation extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'from',
-        'to',
-        'mass',
-    ];
+    protected static $unguarded = true;
 }
