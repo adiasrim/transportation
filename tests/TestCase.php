@@ -2,6 +2,7 @@
 
 namespace Tests;
 
+use App\Models\Transportation;
 use Artisan;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;

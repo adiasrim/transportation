@@ -20,7 +20,4 @@ Route::group(['as' => 'auth.', 'prefix' => 'auth', 'middleware' => 'guest'], fun
     Route::post('login', [AuthenticationController::class, 'login'])->name('login');
 });
 
-Route::group(['as' => 'transportation.', 'prefix' => 'transportation'], function () {
-    Route::get('/', [TransportationController::class, 'index'])->name('index');
-    Route::post('/add', [TransportationController::class, 'store'])->name('store');
-});
+Route::apiResource('transportation', TransportationController::class)->except(['destroy', 'update']);

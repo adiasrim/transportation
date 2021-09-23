@@ -18,13 +18,18 @@ class TransportationController extends Controller
     public function store(Request $request): JsonResponse
     {
         $data = $request->validate([
-            'latitude'  => 'required',
-            'longitude' => 'required',
-            'mass'      => 'required|int'
+            'origins'      => 'required',
+            'destinations' => 'required',
+            'mass'         => 'required|int'
         ]);
 
         Transportation::create($data);
 
         return $this->responseMessage('all nice', Response::HTTP_CREATED);
+    }
+
+    public function show(Request $request, Transportation $transportation)
+    {
+        return $this->responseMessage("Cost of transportation is: " . $transportation->calculate() . " ruble");
     }
 }
